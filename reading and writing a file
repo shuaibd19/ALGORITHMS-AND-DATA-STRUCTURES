@@ -1,0 +1,39 @@
+#include <iostream>
+#include <fstream>
+#include <string>
+
+
+using namespace std;
+
+//bool readMyFile()
+//{
+//	string line;
+//	ifstream myfile("MyTextFile.txt");
+//	if (myfile.is_open())
+//	{
+//		while (getline(myfile, line))
+//		{
+//			cout << line;
+//		}
+//		myfile.close();
+//	}
+//	else
+//	{
+//		cout << "Error: File Open for read";
+//	}
+//}
+
+int main()
+{
+	ofstream myfile;
+	int i = 10;
+	//output file stream called myfile.
+	myfile.open("MyTextFile.txt");
+	//named the file MyTextFile.txt in the directory that i am using
+	
+	myfile << "hello world " << i << endl;
+
+	myfile.close();
+	//readMyFile();
+	return 0;
+}
