@@ -3,12 +3,16 @@
 
 using namespace std;
 using namespace std::chrono;
-
+/*this program uses a function to assign timestamps before and after it's
+call in order to calculate the time taken to run the funvtion. We also look
+at how we can improve the function for better optimisation*/
 bool count(const int pLimit)
 {
+	int result = 0;
 	for (int i = 1; i <= pLimit; ++i)
 	{
-		cout << "Number: " << i << "\n";
+		result = i;
+		//cout << "Number: " << i << "\n";
 	}
 	return true;
 }
@@ -17,13 +21,13 @@ int main()
 {
 	auto start = high_resolution_clock::now();
 
-	count(10);
+	count(10000);
 
 	auto stop = high_resolution_clock::now();
 
-	auto duration = duration_cast<microseconds>(stop - start);
+	auto duration = duration_cast<nanoseconds>(stop - start);
 
-	cout << "count has taken " << duration.count() << " microseconds - to execute\n";
+	cout << "count has taken " << duration.count() << " nanoseconds - to execute\n";
 
 	return 0;
 }
