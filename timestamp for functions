@@ -1,0 +1,29 @@
+#include <iostream>
+#include <chrono>
+
+using namespace std;
+using namespace std::chrono;
+
+bool count(const int pLimit)
+{
+	for (int i = 1; i <= pLimit; ++i)
+	{
+		cout << "Number: " << i << "\n";
+	}
+	return true;
+}
+
+int main()
+{
+	auto start = high_resolution_clock::now();
+
+	count(10);
+
+	auto stop = high_resolution_clock::now();
+
+	auto duration = duration_cast<microseconds>(stop - start);
+
+	cout << "count has taken " << duration.count() << " microseconds - to execute\n";
+
+	return 0;
+}
