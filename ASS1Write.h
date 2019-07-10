@@ -28,6 +28,10 @@ void Write::writeToFile(string fileName)
 {
 	ofstream myfile;
 	myfile.open(fileName);
-	myfile << "0\n1\n5\n56 12 1 4 9" << endl;
+	myfile << 0 << endl;
+	myfile << 1 << endl;
+	myfile << 10 << endl;
+	myfile << 1 << " " << 2 << " " << 3 << " " << 4 << " " << 5 <<
+		" " << 6 << " " << 7 << " " << 8 << " " << 9 << " " << 10;
 	myfile.close();
 }
