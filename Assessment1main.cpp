@@ -1,6 +1,8 @@
 #include <iostream>
 #include <string>
 #include <chrono>
+#include <fstream>
+#include <iomanip> 
 #include "Gen_Ran_Inp.h"
 #include "Save_Values.h"
 #include "SortingAlg.h"
@@ -15,6 +17,8 @@ int main()
 	int complexity = -2;
 	int numOfItems = -2;
 	int *items;
+
+	double time;
 
 	SortingAlg sorting;
 	Gen_Ran_Inp random;
@@ -41,8 +45,24 @@ int main()
 		auto duration = duration_cast<milliseconds>(stop - start);
 		printArray(items, numOfItems);
 		cout << "\n\n";
-		cout << "count has taken 0.00" << duration.count() << " milliseconds - to execute\n";
+		cout << "count has taken " << duration.count() << " milliseconds - to execute\n";
 		cout << endl;
+		ofstream myFile;
+		myFile.open("output-a1q1.txt");
+		time = (double)duration.count();
+		myFile << setprecision(5) << time;
+		myFile << "\n";
+		for (int i = 0; i < numOfItems; i++)
+		{
+			if (i == (numOfItems - 1))
+			{
+				myFile << items[i];
+			}
+			else
+			{
+				myFile << items[i] << " ";
+			}
+		}
 	}
 	else if(sortOrder == 1 && complexity == 0)
 	{
@@ -57,8 +77,24 @@ int main()
 		auto duration = duration_cast<milliseconds>(stop - start);
 		printArray(items, numOfItems);
 		cout << "\n\n";
-		cout << "count has taken 0.00" << duration.count() << " milliseconds - to execute\n";
+		cout << "count has taken " << duration.count() << " milliseconds - to execute\n";
 		cout << endl;
+		ofstream myFile;
+		myFile.open("output-a1q1.txt");
+		time = duration.count() * 1.0;
+		myFile << setprecision(5) << time;
+		myFile << "\n";
+		for (int i = 0; i < numOfItems; i++)
+		{
+			if (i == (numOfItems - 1))
+			{
+				myFile << items[i];
+			}
+			else
+			{
+				myFile << items[i] << " ";
+			}
+		}
 	}
 	
 	else if (sortOrder == 0 && complexity == 1)
@@ -74,8 +110,24 @@ int main()
 		auto duration = duration_cast<milliseconds>(stop - start);
 		printArray(items, numOfItems);
 		cout << "\n\n";
-		cout << "count has taken 0.00" << duration.count() << " milliseconds - to execute\n";
+		cout << "count has taken " << duration.count() << " milliseconds - to execute\n";
 		cout << endl;
+		ofstream myFile;
+		myFile.open("output-a1q1.txt");
+		time = duration.count() * 1.0;
+		myFile << setprecision(5) << time;
+		myFile << "\n";
+		for (int i = 0; i < numOfItems; i++)
+		{
+			if (i == (numOfItems - 1))
+			{
+				myFile << items[i];
+			}
+			else
+			{
+				myFile << items[i] << " ";
+			}
+		}
 	}
 
 	else if (sortOrder == 1 && complexity == 1)
@@ -91,8 +143,24 @@ int main()
 		auto duration = duration_cast<milliseconds>(stop - start);
 		printArray(items, numOfItems);
 		cout << "\n\n";
-		cout << "count has taken 0.00" << duration.count() << " milliseconds - to execute\n";
+		cout << "count has taken " << duration.count() << " milliseconds - to execute\n";
 		cout << endl;
+		ofstream myFile;
+		myFile.open("output-a1q1.txt");
+		time = duration.count() * 1.0;
+		myFile << setprecision(5) << time;
+		myFile << "\n";
+		for (int i = 0; i < numOfItems; i++)
+		{
+			if (i == (numOfItems - 1))
+			{
+				myFile << items[i];
+			}
+			else
+			{
+				myFile << items[i] << " ";
+			}
+		}
 	}
 
 	cout << endl;
