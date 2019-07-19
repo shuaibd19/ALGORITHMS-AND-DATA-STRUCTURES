@@ -1,3 +1,7 @@
+/*references: https://www.codementor.io/codementorteam/a-comprehensive-guide-to-implementation-of-singly-linked-list-using-c_plus_plus-ondlm5azr
+https://www.geeksforgeeks.org/remove-last-node-of-the-linked-list/
+https://www.codesdope.com/blog/article/c-linked-lists-in-c-singly-linked-list/ */
+
 #pragma once
 #include <iostream>
 using namespace std;
