@@ -4,7 +4,6 @@ struct Node
 {
 	int data;
 	Node *next;
-	Node *previos;
 };
 
 class SlinkedList
@@ -29,5 +28,21 @@ SlinkedList::SlinkedList()
 }
 
 SlinkedList::~SlinkedList()
+{
+}
+
+bool SlinkedList::insertAtBeginning()
+{
+}
+
+bool SlinkedList::deleteFromBeginning()
+{
+}
+
+bool SlinkedList::insertAtEnd()
+{
+}
+
+bool SlinkedList::deleteFromEnd()
 {
 }
