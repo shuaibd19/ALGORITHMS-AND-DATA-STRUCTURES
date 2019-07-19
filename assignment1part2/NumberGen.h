@@ -20,7 +20,8 @@ NumberGen::NumberGen()
 {
 	/*due to rand function having a max value i have to to do something smart*/
 	srand((unsigned)time(NULL));
-	randomNumber = (int)pow((double)(rand() % 999999), 1.3);
+	//randomNumber = (int)pow((double)(rand() % 999999), 2.0);
+	randomNumber = 189000;
 }
 
 NumberGen::~NumberGen()
