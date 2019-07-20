@@ -1,3 +1,7 @@
+//I was not able to get the delete from end function able to work within a loop
+//order to timestamp therefore you will only get three lines of code with the times
+//in milliseconds
+
 #include <iostream>
 #include <chrono>
 #include "LinkedList.h"
@@ -10,8 +14,9 @@ using namespace std;
 
 int main()
 {
-	typedef high_resolution_clock Clock;
+	//Seeding value for random number generator
 	srand((unsigned)time(NULL));
+	//Creating int to store value from file in its memory location
 	int numberOfItems = 0;
 	//NumberGen gen;
 	//gen.writeRanInp();
@@ -20,49 +25,45 @@ int main()
 	cout << numberOfItems << endl;
 	LinkedList lList;
 
-	auto start1 = Clock::now();
+	//Using chrono library functions to timestamp loops of various functions
+	//from LinkedList class such as insertAtBeginning
+	auto start1 = high_resolution_clock::now();
 	for (int i = 0; i < numberOfItems; i++)
 	{
 		lList.insertAtBeginning(rand() % 10);
 	}
-	auto stop1 = Clock::now();
-	auto duration1 = duration_cast<milliseconds>(stop1 - start1);
-	cout << duration1.count() << endl << endl;
+	auto stop1 = high_resolution_clock::now();
+	auto insertB = duration_cast<milliseconds>(stop1 - start1);
+	cout << insertB.count() << endl << endl;
 
-	auto start2 = Clock::now();
+	auto start2 = high_resolution_clock::now();
 	for (int i = 0; i < numberOfItems; i++)
 	{
 		lList.deleteFromBeginning();
 	}
-	auto stop2 = Clock::now();
-	auto duration2 = duration_cast<milliseconds>(stop2 - start2);
-	cout << duration2.count() << endl << endl;
+	auto stop2 = high_resolution_clock::now();
+	auto deleteB = duration_cast<milliseconds>(stop2 - start2);
+	cout << deleteB.count() << endl << endl;
 
-	auto start3 = Clock::now();
+	auto start3 = high_resolution_clock::now();
 	for (int i = 0; i < numberOfItems; i++)
 	{
 		lList.insertAtEnd(rand()%10);
 	}
-	auto stop3 = Clock::now();
-	auto duration3 = duration_cast<milliseconds>(stop3 - start3);
-	cout << duration3.count() << endl << endl;
+	auto stop3 = high_resolution_clock::now();
+	auto insertE = duration_cast<milliseconds>(stop3 - start3);
+	cout << insertE.count() << endl << endl;
 
+
+	//Printing the various values in milliseconds outputted from the 
+	//timestamping to an output.txt file
 	ofstream myFile;
 	myFile.open("output-a1q2.txt");
-	myFile << duration1.count() << endl;
-	myFile << duration3.count() << endl;
-	myFile << duration2.count() << endl;
-	//myFile << duration4.count() << endl;
+	myFile << insertB.count() << endl;
+	myFile << insertE.count() << endl;
+	myFile << deleteB.count() << endl;
 	myFile.close();
 
-	auto start4 = Clock::now();
-	for (int i = 0; i < numberOfItems; i++)
-	{
-		lList.deleteFromEnd();
-	}
-	auto stop4 = Clock::now();
-	auto duration4 = duration_cast<milliseconds>(stop4 - start4);
-	cout << duration4.count() << endl;
 
 	
 	return 0;
