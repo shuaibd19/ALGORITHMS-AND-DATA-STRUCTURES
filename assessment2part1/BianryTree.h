@@ -23,9 +23,9 @@ public:
 	//Insert the data into the binary tree
 	bool InsertNode(Node*);
 	//BFS search
-	int TraverseBFS() {return 0};
+	int TraverseBFS();
 	//DFS search
-	int TraverseDFS() {return 0};
+	int TraverseDFS();
 	//print of the nodes
 	bool print();
 private:
@@ -49,6 +49,7 @@ bool BinaryTree::InsertNode(Node* pNode)
 	if (root == nullptr)
 	{
 		root = pNode;
+		std::cout << root->data << std::endl;
 	}
 	//otherwise we need to find an empty node
 	else
@@ -56,6 +57,8 @@ bool BinaryTree::InsertNode(Node* pNode)
 		//we forward the root node to find the empty node
 		Node* vNode = getEmpty(root);
 		vNode = pNode;
+
+		std::cout << vNode->data << std::endl;
 	}
 	return true;
 }
