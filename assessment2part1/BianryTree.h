@@ -26,6 +26,8 @@ public:
 	int TraverseBFS();
 	//DFS search
 	int TraverseDFS();
+	//print of the nodes
+	bool print();
 private:
 	Node* root;
 	Node* getEmpty(Node*);
@@ -85,4 +87,9 @@ Node* BinaryTree::getEmpty(Node* pNode)
 
 	//code should never reach here
 	return nullptr;
+}
+
+bool BinaryTree::print()
+{
+	return true;
 }
