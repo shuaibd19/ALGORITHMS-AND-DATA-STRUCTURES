@@ -2,7 +2,7 @@
 #include <iostream>
 using namespace std;
 
-typedef struct Node
+struct Node
 {
 	Node()
 	{
@@ -23,9 +23,9 @@ public:
 	//Insert the data into the binary tree
 	bool InsertNode(Node*);
 	//BFS search
-	int TraverseBFS();
+	int TraverseBFS() {return 0};
 	//DFS search
-	int TraverseDFS();
+	int TraverseDFS() {return 0};
 	//print of the nodes
 	bool print();
 private:
