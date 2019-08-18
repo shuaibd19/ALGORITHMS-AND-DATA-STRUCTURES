@@ -1,13 +1,19 @@
 #include <iostream>
+#include <stdlib.h>
+#include <fstream>
 #include "Gen_Ran_Inp.h"
 #include "Save_Values.h"
+#include "Binary_Tree.h"
 
 using namespace std;
+
 
 int main()
 {
 	Gen_Ran_Inp ran;
 	Save_Values save;
+	Binary_Tree avl;
+
 
 	bool didGenerate = false;
 	didGenerate = ran.writeRanInp();
@@ -31,5 +37,19 @@ int main()
 		}
 		
 	}
+
+	cout << "\n\n";
+
+	Node *root = nullptr;
+
+	for (int i = 0; i < numElements; i++)
+	{
+		root = avl.insertNode(root, items[i]);
+	}
+
+	avl.printBFS(root);
+
+
+
 	return 0;
 }

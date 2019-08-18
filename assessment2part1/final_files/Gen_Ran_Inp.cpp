@@ -4,7 +4,7 @@ Gen_Ran_Inp::Gen_Ran_Inp()
 {
 	//constructer initializes all the values
 	srand((unsigned int)time(NULL));
-	numElements = rand() % 20;
+	numElements = rand() % 100;
 	items = new int[numElements];
 	for (int i = 0; i < numElements; i++)
 	{
