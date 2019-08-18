@@ -11,6 +11,8 @@ class Gen_Ran_Inp
 public:
 	Gen_Ran_Inp();
 	~Gen_Ran_Inp();
+	//generates a random input for and input file used for 
+	//testing purposes
 	bool writeRanInp();
 
 private:

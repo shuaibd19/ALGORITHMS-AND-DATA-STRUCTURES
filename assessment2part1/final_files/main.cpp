@@ -35,18 +35,21 @@ int main()
 		{
 			cout << items[i] << " ";
 		}
-		
+
 	}
 
 	cout << "\n\n";
 
 	Node *root = nullptr;
 
+	//inserting the data members from the items array 
+	//into avl tree as nodes
 	for (int i = 0; i < numElements; i++)
 	{
 		root = avl.insertNode(root, items[i]);
 	}
 
+	//calling upon the print function using BFS
 	avl.printBFS(root);
 
 

@@ -3,11 +3,15 @@
 
 int Binary_Tree::getMaxHeight(int valA, int valB)
 {
+	//checks between two integers for the highest value and returns it
 	return (valA > valB) ? valA : valB;
 }
 
 int Binary_Tree::getHeight(Node * node)
 {
+	//returns the "height" of a provided node
+	//in the case that it does not exist it returns 
+	//0
 	if (node == nullptr)
 		return 0;
 	return node->height;
@@ -15,6 +19,8 @@ int Binary_Tree::getHeight(Node * node)
 
 Node * Binary_Tree::rootNode(int value)
 {
+	//this function constructs a node (leaf)
+	//that is commonly used to add new data members
 	Node *root = new Node;
 	root->value = value;
 	root->leftChild = nullptr;
@@ -59,12 +65,15 @@ Node * Binary_Tree::rotateLeft(Node * x)
 
 int Binary_Tree::balance(Node * node)
 {
+	//this function checks the balance of the avl tree
 	if (node == nullptr)
 	{
 		return 0;
 	}
 	else
 	{
+		//if the discreprency between these two is more than the absolute 
+		//value of 2 then rotation is required
 		return getHeight(node->leftChild) - getHeight(node->rightChild);
 	}
 }
@@ -135,6 +144,8 @@ Node * Binary_Tree::insertNode(Node * node, int value)
 
 int Binary_Tree::tallestHeight(Node * node)
 {
+	//this function returns the node with the tallest height
+	//by using a recursive function within itself
 	if (node == nullptr)
 	{
 		return 0;
@@ -152,19 +163,23 @@ int Binary_Tree::tallestHeight(Node * node)
 		{
 			return(rightH + 1);
 		}
-		
+
 	}
 }
 
 void Binary_Tree::printNodeLevel(Node * node, int level)
 {
+	//this recursive function prints the value 
+	//stored in the nodes at particular levels
+	//and also writes to the output file at
+	//the same time
 	if (node == nullptr)
 	{
 		return;
 	}
 	if (level == 1)
 	{
-		
+
 		cout << node->value << " ";
 		myFile << node->value << " ";
 	}
@@ -177,6 +192,9 @@ void Binary_Tree::printNodeLevel(Node * node, int level)
 
 void Binary_Tree::printBFS(Node * node)
 {
+	//this function is used to print out and write to 
+	//an output file as well as the console the avl 
+	//tree in the format as shown in the assessment example
 	myFile.open("output-q1-a2.txt");
 	int h = tallestHeight(node);
 	for (int i = 1; i <= h; i++)
